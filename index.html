@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Car Insurance</title>
+    </head>
+    <body>
+        <header class="bg-hero h-screen flex flex-col">
+            <div class="bg-black/60 w-full">
+                <div class="container mx-auto py-8 px-6 flex justify-between">
+                    <div>
+                        <img src="img/logo.png" alt="logo">
+                    </div>
+                    <input type="checkbox" id="menu-toggle" class="hidden">
+                    <label for="menu-toggle" class="cursor-pointer lg:hidden">
+                        <svg class="w-6 h-6 text-white" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                    <nav class="ms-6 lg:flex lg:items-center hidden">
+                        <ul class="block lg:flex justify-between font-bold">
+                            <li class="px-3">
+                                <a class="text-white hover:text-sky-500"
+                                    href="#">Home</a>
+                            </li>
+                            <li class="px-3">
+                                <a class="text-white hover:text-sky-500"
+                                    href="#quote">Quote</a>
+                            </li>
+                            <li class="px-3">
+                                <a class="text-white hover:text-sky-500"
+                                    href="#cotact">Contact</a>
+                            </li>
+                            <li class="px-3 mt-4 block lg:hidden">
+                                <a href
+                                    class="bg-sky-500 hover:bg-sky-600 py-2 px-4 text-white rounded-md">Login</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="font-bold  hidden lg:block">
+                        <a href
+                            class="bg-sky-500 hover:bg-sky-600 py-2 px-4 text-white rounded-md ms-6">Login</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex items-center flex-col text-white max-w-screen-md text-center mx-auto font-bold justify-center h-screen">
+                <h1 class="text-5xl md:text-8xl lg:text-10xl">Smiling Pockets!</h1>
+                <p class="p-6 text-3xl">Improve your insurance: Unleash the magic of car quotes</p>
+                <div class="mt-6">
+                    <a
+                        class="bg-sky-500 hover:bg-sky-600 text-xl py-2 px-6 text-white rounded-full ms-6"
+                        href="#quote">Get Quote Now</a>
+                </div>
+            </div>
+        </header>
+        <div class="container px-6 mx-auto pt-20 pb-40" id="quote">
+            <h1 class="text-center text-4xl font-bold text-gray-800 mb-20">Quote
+                your car insurance</h1>
+            <div class="flex  flex-col  max-w-screen-md mx-auto ">
+                <form action="#" id="quote-insurance"
+                    class="bg-gray-100 p-8 rounded-lg shadow-lg">
+                    <div class="mb-6">
+                        <label class="block mb-2 text-lg font-bold"
+                            for="segment">Segment</label>
+                        <select
+                            class="w-full p-2 border border-gray-300 rounded"
+                            id="segment">
+                            <option value> Select Car Segment </option>
+                            <option value="1">Small family cars</option>
+                            <option value="2">Large family cars</option>
+                            <option value="3">Sports cars</option>
+                            <option value="4">Luxury cars</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block mb-2 text-lg font-bold" for="year">Year</label>
+                        <select
+                            class="w-full p-2 border border-gray-300 rounded"
+                            id="year"></select>
+                    </div>
+                    <div class="mb-6">
+                        <div class="block mb-2 text-lg font-bold">Type of
+                            insurance</div>
+                        <div class="flex items-center">
+
+                            <label class="mr-2">Essential</label>
+                            <input type="radio" class="mr-6" name="tipo"
+                                value="essential" checked>
+
+                            <label class="mr-2">Complete</label>
+                            <input type="radio" name="tipo" value="complete">
+                        </div>
+                    </div>
+
+                    <div id="result"></div>
+                    <div class="mb-6 text-center">
+                        <button type="submit" id="check"
+                            class="bg-sky-500 hover:bg-sky-600 text-xl py-2 px-6 text-white rounded-full ms-6">Quote
+                            Insurance</button>
+                    </div>
+
+                    <div class="text-center mb-3 hidden" id="spinner">
+                        <svg
+                            class="animate-spin mx-auto h-10 w-10  text-sky-500"
+                            xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10"
+                                stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+
+                    </div>
+
+                </form>
+
+                <div class="mt-20 mb-5 text-lg font-bold">Prices are based on
+                </div>
+                <ul class="mx-2">
+                    <li class="font-medium">Base price of auto insurance: $2000</li>
+                    <li class="mt-3 font-medium">Segment rates:</li>
+                    <li>- Small family cars + 15% </li>
+                    <li>- Large family cars + 25% </li>
+                    <li>- Sports cars + 35%</li>
+                    <li>- Luxury cars + 45%</li>
+
+                    <li class="mt-8 font-medium">Type of insurance</li>
+                    <li> Essential + 30% </li>
+                    <li>Complete + 50% </li>
+                    <li class="mt-8">For the current year, the base price applies For each preceding year, there is a 3% decrease in the base price</li>
+                </ul>
+
+            </div>
+        </div>
+        <footer class="bg-gray-900" id="cotact">
+            <div
+                class="lg:container text-center lg:text-left  mx-auto py-10 grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <div>
+                    <a href="#"><img class="mx-auto lg:mx-0" src="img/logo.png"
+                            alt="logo"></a>
+                </div>
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Menu</h3>
+                    <ul class="text-white">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Quote</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">FQS</h3>
+                    <ul class="text-white">
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Coverage</a></li>
+                        <li><a href="#">Cancellation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">Follow up</h3>
+                    <ul class="text-white">
+                        <li><a href="#">IG</a> <a href="#">FB</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const nav = document.querySelector('nav');
+            menuToggle.addEventListener('change', () => {
+                nav.classList.toggle('hidden');
+            });
+        </script>
+    </body>
+</html>
